@@ -2,6 +2,13 @@
     /* background-color: #8D77AB; */
     color: white;
 }
+.logo{
+    padding: 5px;
+    margin: 1px;
+    height:45px;
+    width: 120px;
+    border-radius: 15px;
+  }
 #nav:hover{
     color:#AABA99;
 }

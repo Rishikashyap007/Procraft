@@ -51,7 +51,7 @@ const Home_five = () => {
             </div>
             <div className="flex justify-center mt-6">
             <Link href={isAuthenticated?"/dashboard":"/login2"}>
-              <button className="px-6 py-3 rounded-2xl font-semibold text-white bg-blue-500 hover:bg-blue-600 shadow-md">
+              <button className="px-6 py-3 rounded-2xl font-semibold text-purple-700 bg-white hover:bg-purple-600 hover:text-white shadow-md">
                 Get Started For Free
               </button>
               </Link>

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import toast from "react-hot-toast";
-import logo from "./logo.jpg";
+import logo from "../../assets/lg1.jpg";
 import { useRouter } from "next/router"; // Ensure this file exists and is correctly linked
 import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
@@ -93,8 +93,9 @@ function Signup() {
           <Image src={logo} className="w-40 h-10" alt="Logo" />
         </div>
         <div className="text-2xl text-black text-center font-bold">
-          Create an Account
-        </div>
+  Create<span className="text-purple-600"> an </span>Account
+</div>
+
         <form onSubmit={handleSignup}>
        <div className="flex gap-7 mt-2">
        <div className="mb-4">
@@ -187,11 +188,12 @@ function Signup() {
             </label>
           </div>
           <button
-            type="submit"
-            className="w-full bg-yellow-500 text-black px-4 py-2 rounded-md"
-          >
-            Signup
-          </button>
+  type="submit"
+  className="bg-purple-600 text-white hover:bg-purple-700 w-full px-4 py-2 text-md font-medium rounded-xl transition-colors duration-300"
+>
+  Sign up
+</button>
+
         </form>
       </div>
     </div>

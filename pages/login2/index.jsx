@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import logo from "./logo.jpg";
+import logo from "../../assets/lg1.jpg";
 import toast from "react-hot-toast";
 import Modal from "./Modal";
 import Signup from "./Signup";
@@ -68,7 +68,7 @@ router.push("/dashboard/page");
             <Image src={logo} className="w-40 h-10" alt="Logo" />
           </div>
           <div className="text-2xl text-black text-center font-bold mb-4">
-            Welcome Back
+           <span className="text-purple-600">Welcome </span>Back
           </div>
           <p className="text-black text-base text-center mb-6">
             People across the globe are joining us to upgrade their career with our Robust AI.
@@ -110,7 +110,7 @@ router.push("/dashboard/page");
             <div className="text-center py-2">
               <button
                 type="button"
-                className="text-blue-500 hover:text-yellow-500"
+                className="text-purple-500 hover:text-yellow-500"
                 onClick={() => setThirdstepOpen(true)}
               >
                 New User? Create Account
@@ -122,11 +122,12 @@ router.push("/dashboard/page");
               </Link>
             </div>
             <button
-              type="submit"
-              className="w-full bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors duration-300"
-            >
-              Login
-            </button>
+  type="submit"
+  className="bg-purple-600 text-white hover:bg-purple-700 w-full px-4 py-2 text-md font-medium rounded-xl transition-colors duration-300"
+>
+  Login
+</button>
+
           </form>
         </div>
       </div>

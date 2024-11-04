@@ -125,7 +125,7 @@ const FAQ = () => {
   return (
     <div id='faq' className=' bg-gray-100'>
     <div className=" max-w-4xl mt-2  mx-auto p-4" >
-      <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+      <h2 className="text-3xl font-bold mb-4">Frequently<span className='text-purple-700'> Asked </span>Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
@@ -140,7 +140,7 @@ const FAQ = () => {
 
    
       
-    <h1 className=' text-center font-bold text-3xl pt-10 mt-5 pb-3 bg-white' id='phone' >Get In Touch</h1>
+    <h1 className=' text-center font-bold text-3xl pt-10 mt-5 pb-3 bg-white' id='phone' >Get In<span className='text-purple-700'> Touch</span></h1>
                   <p className=' text-center pb-5 bg-white'>Build professional, job-winning resumes in minutes with our AI-powered tools and expert suggestions!</p>
   
     <div className='lg:flex justify-center flex-row gap-10 pb-20 bg-white'>
