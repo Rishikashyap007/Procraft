@@ -217,19 +217,19 @@ const Navbar = () => {
 
           {/* Menu Items */}
           <div className="hidden md:flex space-x-4">
-            <Link href="/navbarcontent" className="text-gray-700 px-3 py-2 rounded-md text-lg font-medium group hover:text-purple-600">
+            <Link href="/navbarcontent" className="text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600">
               AI Resume Builder
               <span className="block h-0.5 bg-purple-600 transition-all duration-200 transform scale-x-0 group-hover:scale-x-100"></span>
             </Link>
-            <Link href="https://blog.resumeintellect.com/" className="text-gray-700 px-3 py-2 rounded-md text-lg font-medium group hover:text-purple-600">
+            <Link href="https://blog.resumeintellect.com/" className="text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600">
               Resources
               <span className="block h-0.5 bg-purple-600 transition-all duration-200 transform scale-x-0 group-hover:scale-x-100"></span>
             </Link>
-            <Link href="https://blog.resumeintellect.com/" className="text-gray-700 px-3 py-2 rounded-md text-lg font-medium group hover:text-purple-600">
+            <Link href="https://blog.resumeintellect.com/" className="text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600">
               About Us
               <span className="block h-0.5 bg-purple-600 transition-all duration-200 transform scale-x-0 group-hover:scale-x-100"></span>
             </Link>
-            <a href="#phone" className="text-gray-700 px-3 py-2 rounded-md text-lg font-medium group hover:text-purple-600">
+            <a href="#phone" className="text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600">
               📞 Contact us
               <span className="block h-0.5 bg-purple-600 transition-all duration-200 transform scale-x-0 group-hover:scale-x-100"></span>
             </a>
@@ -261,8 +261,8 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Link href="/login2" className="text-gray-700 hover:text-purple-600 px-4 py-2 text-md font-medium border-2 border-gray-200 rounded-xl">Log in</Link>
-                <Link href="/signup" className="bg-purple-600 text-white hover:bg-purple-700 px-4 py-2 text-md font-medium rounded-xl">Sign up</Link>
+                <Link href="/login2" className="text-gray-700 hover:text-purple-600 px-4 py-2 text-md font-bold border-2 border-gray-200 rounded-xl">Log in</Link>
+                <Link href="/signup" className="bg-purple-600 text-white hover:bg-purple-700 px-4 py-2 text-md font-bold rounded-xl">Sign up</Link>
               </>
             )}
           </div>
@@ -281,9 +281,9 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-semibold hover:text-purple-600" onClick={handleLinkClick}>AI Resume Builder</Link>
-              <Link href="https://blog.resumeintellect.com/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-semibold hover:text-purple-600" onClick={handleLinkClick}>Resources</Link>
-              <Link href="https://blog.resumeintellect.com/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-semibold hover:text-purple-600" onClick={handleLinkClick}>About Us</Link>
+              <Link href="/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-extrabold hover:text-purple-600" onClick={handleLinkClick}>AI Resume Builder</Link>
+              <Link href="https://blog.resumeintellect.com/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-bold hover:text-purple-600" onClick={handleLinkClick}>Resources</Link>
+              <Link href="https://blog.resumeintellect.com/" className="text-gray-700 block px-3 py-2 rounded-md text-base font-bold hover:text-purple-600" onClick={handleLinkClick}>About Us</Link>
               <Link href="/blog" className="text-gray-700 block px-3 py-2 rounded-md text-base font-semibold hover:text-purple-600" onClick={handleLinkClick}>Blog</Link>
 
               {isLoggedIn ? (
