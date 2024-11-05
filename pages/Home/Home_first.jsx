@@ -141,7 +141,7 @@ function Home_first() {
                     <Image
                       src={image}
                       alt="home-slide"
-                      className="md:h-auto md:w-80 transition-transform transform hover:scale-105"
+                      className="md:h-auto md:w-80 transition-transform transform hover:scale-105 "
                     />
                   </div>
                 ))}

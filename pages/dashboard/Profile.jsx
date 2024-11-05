@@ -461,9 +461,9 @@ const ProfilePage = () => {
   return (
     <>
       <Navbar/>
-      <div className="bg-indigo-900 p-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-lg shadow-lg p-6 bg-indigo-800 flex flex-col md:flex-row justify-between items-center md:h-44">
+      <div className="bg-gray-200 p-4 font-ubuntu">
+        <div className="max-w-full mx-auto">
+          <div className="rounded-lg shadow-lg p-6 bg-purple-700 flex flex-col md:flex-row justify-between items-center md:h-44">
             <div className="space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-full">
               <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
                 <img
@@ -472,23 +472,26 @@ const ProfilePage = () => {
                   className="w-20 h-20 rounded-full mb-4 md:mb-0"
                 />
                 <div className="text-white">
-                  <h2 className="text-xl font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
+                  <h2 className="text-xl font-ubuntu font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
                   <p>{formData.professional_title || "Please update your Profile Title!"}</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:ms-20">
                 <div>
-                  <p className="text-white">📧 {formData.email || "Please update your [Email]"}</p>
-                  <p className="text-white">📱 {formData.phone || "Please update your [Phone]"}</p>
+                  <p className="text-white font-ubuntu">📧 {formData.email || "Please update your [Email]"}</p>
+                  <p className="text-white font-ubuntu">📱 {formData.phone || "Please update your [Phone]"}</p>
                 </div>
               </div>
             </div>
             <div className="hidden md:block border-[0.5px] border-gray-500 h-40"></div>
-            <div className="flex flex-col justify-start items-start gap-3 mx-1 w-full md:w-auto">
+            
+            <div className="flex items-center justify-center">
+
+            <div className="flex flex-row justify-start items-start ">
               {resumes.length > 0 && (
-                <div key={resumes[0].id} className="border-t border-gray-700 w-full">
+                <div key={resumes[0].id} className=" border-gray-700 w-1/2 ">
                   <button
-                    className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 w-full md:w-auto"
+                    className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800"
                     onClick={() => handleGetScore(resumes[0])}
                     disabled={isLoading}
                   >
@@ -504,7 +507,7 @@ const ProfilePage = () => {
                   </button>
                 </div>
               )}
-              <div className="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto">
+              <div className="flex flex-col md:flex-row items-center w-1/2">
                 <input
                   type="file"
                   onChange={handleFileChange}
@@ -514,7 +517,7 @@ const ProfilePage = () => {
                 />
                 <label
                   htmlFor="fileInput"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer w-full md:w-auto text-center"
+                  className="bg-gray-100 text-purple-600 px-4 py-2 flex items-center justify-center rounded-lg hover:bg-purple-900 hover:text-white cursor-pointer md:w-auto text-center"
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">
@@ -536,6 +539,7 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
+            </div>
 
           {isModalOpen && (
             <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">

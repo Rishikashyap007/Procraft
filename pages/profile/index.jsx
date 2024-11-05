@@ -217,200 +217,399 @@ const ProfileForm = () => {
   }
 
   return (
-    <div className="p-2 md:p-6">
-      <div className="w-[15rem] md:w-full mx-auto rounded-lg shadow-lg px-4 py-2 md:p-6">
-        <h1 className="text-2xl font-bold mb-6 text-center md:text-left">BASIC INFORMATION</h1>
+    // <div className="p-2 md:p-6">
+    //   <div className="w-[15rem] md:w-full mx-auto rounded-lg shadow-lg px-4 py-2 md:p-6">
+    //     <h1 className="text-2xl font-bold mb-6 text-center md:text-left">BASIC INFORMATION</h1>
         
-        <form onSubmit={handleSubmit}>
-          <div className="">
-            <label className="block mb-2">Change Your Image:</label>
-            <div className="md:flex items-center ">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                className="w-full border p-2 mr-2"
-              />
-            </div>
-          </div>
+    //     <form onSubmit={handleSubmit}>
+    //       <div className="">
+    //         <label className="block mb-2">Change Your Image:</label>
+    //         <div className="md:flex items-center ">
+    //           <input
+    //             type="file"
+    //             accept="image/*"
+    //             onChange={handleFileChange}
+    //             className="w-full border p-2 mr-2"
+    //           />
+    //         </div>
+    //       </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label className="block mb-2">First Name*</label>
-              <input
-                type="text"
-                name="first_name"
-                value={formData.first_name}
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Last Name*</label>
-              <input
-                type="text"
-                name="last_name"
-                value={formData.last_name}
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Professional Title*</label>
-              <input
-                type="text"
-                name="professional_title"
-                value={formData.professional_title}
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Languages*</label>
-              <input
-                type="text"
-                name="languages"
-                value={formData.languages}
-                onChange={handleChange}
-                className="w-full border p-2"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Age*</label>
-              <input
-                type="number"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                className="w-full border p-2"
-                min="0"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Current Salary ($):</label>
-              <input
-                type="number"
-                name="current_salary"
-                value={formData.current_salary}
-                onChange={handleChange}
-                className="w-full border p-2"
-                min="0"
-                required
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Expected Salary ($):</label>
-              <input
-                type="number"
-                name="expected_salary"
-                value={formData.expected_salary}
-                onChange={handleChange}
-                className="w-full border p-2"
-                min="0"
-                required
-              />
-            </div>
-            <div className="md:col-span-2">
-              <label className="block mb-2">Description*</label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                className="w-full border p-2"
-                rows="4"
-              />
-            </div>
+    //       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+    //         <div>
+    //           <label className="block mb-2">First Name*</label>
+    //           <input
+    //             type="text"
+    //             name="first_name"
+    //             value={formData.first_name}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Last Name*</label>
+    //           <input
+    //             type="text"
+    //             name="last_name"
+    //             value={formData.last_name}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Professional Title*</label>
+    //           <input
+    //             type="text"
+    //             name="professional_title"
+    //             value={formData.professional_title}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Languages*</label>
+    //           <input
+    //             type="text"
+    //             name="languages"
+    //             value={formData.languages}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Age*</label>
+    //           <input
+    //             type="number"
+    //             name="age"
+    //             value={formData.age}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             min="0"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Current Salary ($):</label>
+    //           <input
+    //             type="number"
+    //             name="current_salary"
+    //             value={formData.current_salary}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             min="0"
+    //             required
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Expected Salary ($):</label>
+    //           <input
+    //             type="number"
+    //             name="expected_salary"
+    //             value={formData.expected_salary}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             min="0"
+    //             required
+    //           />
+    //         </div>
+    //         <div className="md:col-span-2">
+    //           <label className="block mb-2">Description*</label>
+    //           <textarea
+    //             name="description"
+    //             value={formData.description}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //             rows="4"
+    //           />
+    //         </div>
 
-            <div>
-              <label className="block mb-2">Phone Number </label>
-              <input
-                type="number"
-                name="phone"
-                value={formData.phone}
+    //         <div>
+    //           <label className="block mb-2">Phone Number </label>
+    //           <input
+    //             type="number"
+    //             name="phone"
+    //             value={formData.phone}
                 
-                className="w-full border p-2"
-                readOnly
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Email</label>
-              <input
-                type="text"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full border p-2"
-               readOnly
-              />
-            </div>
-            <div>
-              <label className="block mb-2">Country:</label>
-              <select
-                name="country_id"
-                value={formData.country_id}
-                onChange={handleCountryChange}
-                className="w-full border p-2"
-              >
-                <option value="">Select a country</option>
-                {countries.map((country) => (
-                  <option key={country.id} value={country.id}>
-                    {country.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block mb-2">State:</label>
-              <select
-                name="state_id"
-                value={formData.state_id}
-                onChange={handleStateChange}
-                className="w-full border p-2"
-                disabled={!formData.country_id}
-              >
-                <option value="">Select a state</option>
-                {states.map((state) => (
-                  <option key={state.id} value={state.id}>
-                    {state.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block mb-2">City:</label>
-              <select
-                name="city_id"
-                value={formData.city_id}
-                onChange={(e) => setFormData(prevData => ({ ...prevData, city_id: e.target.value }))}
-                className="w-full border p-2"
-                disabled={!formData.state_id}
-              >
-                <option value="">Select a city</option>
-               {loading ? (
-      <option disabled>Loading cities...</option>
-    ) : error ? (
-      <option disabled>{error}</option> // Show error if available
-    ) : cities.length > 0 ? (
-      cities.map((city) => (
-        <option key={city.id} value={city.id}>
-          {city.name}
-        </option>
-      ))
-    ) : (
-      <option disabled>No cities available</option> // Show when no cities are found
-    )}
-              </select>
-            </div>
-          </div>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Update Profile</button>
-        </form>
+    //             className="w-full border p-2"
+    //             readOnly
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Email</label>
+    //           <input
+    //             type="text"
+    //             name="email"
+    //             value={formData.email}
+    //             onChange={handleChange}
+    //             className="w-full border p-2"
+    //            readOnly
+    //           />
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">Country:</label>
+    //           <select
+    //             name="country_id"
+    //             value={formData.country_id}
+    //             onChange={handleCountryChange}
+    //             className="w-full border p-2"
+    //           >
+    //             <option value="">Select a country</option>
+    //             {countries.map((country) => (
+    //               <option key={country.id} value={country.id}>
+    //                 {country.name}
+    //               </option>
+    //             ))}
+    //           </select>
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">State:</label>
+    //           <select
+    //             name="state_id"
+    //             value={formData.state_id}
+    //             onChange={handleStateChange}
+    //             className="w-full border p-2"
+    //             disabled={!formData.country_id}
+    //           >
+    //             <option value="">Select a state</option>
+    //             {states.map((state) => (
+    //               <option key={state.id} value={state.id}>
+    //                 {state.name}
+    //               </option>
+    //             ))}
+    //           </select>
+    //         </div>
+    //         <div>
+    //           <label className="block mb-2">City:</label>
+    //           <select
+    //             name="city_id"
+    //             value={formData.city_id}
+    //             onChange={(e) => setFormData(prevData => ({ ...prevData, city_id: e.target.value }))}
+    //             className="w-full border p-2"
+    //             disabled={!formData.state_id}
+    //           >
+    //             <option value="">Select a city</option>
+    //            {loading ? (
+    //   <option disabled>Loading cities...</option>
+    // ) : error ? (
+    //   <option disabled>{error}</option> // Show error if available
+    // ) : cities.length > 0 ? (
+    //   cities.map((city) => (
+    //     <option key={city.id} value={city.id}>
+    //       {city.name}
+    //     </option>
+    //   ))
+    // ) : (
+    //   <option disabled>No cities available</option> // Show when no cities are found
+    // )}
+    //           </select>
+    //         </div>
+    //       </div>
+    //       <button type="submit" className="w-full bg-purple-500 text-white p-2 rounded">Update Profile</button>
+    //     </form>
+    //   </div>
+    // </div>
+
+    <div className="p-4 md:p-8">
+  <div className="w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6"> {/* Increased width here */}
+    <h1 className="text-3xl font-bold mb-6 text-center">BASIC INFORMATION</h1>
+    
+    <form onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label className="block text-gray-700 mb-2">Change Your Image:</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+        />
       </div>
-    </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label className="block text-gray-700 mb-2">First Name*</label>
+          <input
+            type="text"
+            name="first_name"
+            value={formData.first_name}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Last Name*</label>
+          <input
+            type="text"
+            name="last_name"
+            value={formData.last_name}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Professional Title*</label>
+          <input
+            type="text"
+            name="professional_title"
+            value={formData.professional_title}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Languages*</label>
+          <input
+            type="text"
+            name="languages"
+            value={formData.languages}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Age*</label>
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            min="0"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Current Salary ($):</label>
+          <input
+            type="number"
+            name="current_salary"
+            value={formData.current_salary}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            min="0"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Expected Salary ($):</label>
+          <input
+            type="number"
+            name="expected_salary"
+            value={formData.expected_salary}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            min="0"
+            required
+          />
+        </div>
+        <div className="md:col-span-2">
+          <label className="block text-gray-700 mb-2">Description*</label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            rows="4"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-gray-700 mb-2">Phone Number</label>
+          <input
+            type="number"
+            name="phone"
+            value={formData.phone}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            readOnly
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Email</label>
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            readOnly
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">Country:</label>
+          <select
+            name="country_id"
+            value={formData.country_id}
+            onChange={handleCountryChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+          >
+            <option value="">Select a country</option>
+            {countries.map((country) => (
+              <option key={country.id} value={country.id}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">State:</label>
+          <select
+            name="state_id"
+            value={formData.state_id}
+            onChange={handleStateChange}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            disabled={!formData.country_id}
+          >
+            <option value="">Select a state</option>
+            {states.map((state) => (
+              <option key={state.id} value={state.id}>
+                {state.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-gray-700 mb-2">City:</label>
+          <select
+            name="city_id"
+            value={formData.city_id}
+            onChange={(e) => setFormData(prevData => ({ ...prevData, city_id: e.target.value }))}
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring focus:ring-purple-300"
+            disabled={!formData.state_id}
+          >
+            <option value="">Select a city</option>
+            {loading ? (
+              <option disabled>Loading cities...</option>
+            ) : error ? (
+              <option disabled>{error}</option>
+            ) : cities.length > 0 ? (
+              cities.map((city) => (
+                <option key={city.id} value={city.id}>
+                  {city.name}
+                </option>
+              ))
+            ) : (
+              <option disabled>No cities available</option>
+            )}
+          </select>
+        </div>
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-purple-700 text-white p-2 rounded font-bold hover:bg-purple-700 transition duration-200"
+      >
+        Update Profile
+      </button>
+    </form>
+  </div>
+</div>
+
   );
 };
 

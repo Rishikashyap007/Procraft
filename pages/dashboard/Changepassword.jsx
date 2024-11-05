@@ -61,7 +61,7 @@ function Changepassword() {
 
   return (
     <>
-      <div className="bg-white min-h-screen p-4">
+      {/* <div className="bg-white min-h-screen p-4">
         <ToastContainer />
         <div className="bg-white p-8 rounded shadow">
           <div className="flex justify-between items-center mb-6">
@@ -137,7 +137,7 @@ function Changepassword() {
               <div>
                 <button
                   type="submit"
-                  className="w-full mt-5 bg-white text-blue-800 border-blue-800 border-2 px-6 py-3 rounded-lg font-bold"
+                  className="w-full mt-5 bg-white text-purple-700 border-purple-700 border-2 px-6 py-3 rounded-lg font-bold"
                 >
                   🔄 Update Password
                 </button>
@@ -145,7 +145,97 @@ function Changepassword() {
             </div>
           </form>
         </div>
+      </div> */}
+     <div className="bg-gray-50 min-h-screen flex items-start justify-center p-4 pt-8">
+  <ToastContainer />
+  <div className="bg-white max-w-lg w-full p-8 rounded-xl shadow-lg">
+    <div className="flex justify-between items-center mb-6">
+      <h5 className="text-2xl font-bold uppercase text-purple-700 flex items-center">
+        <span className="mr-2">🔐</span> Change Password
+      </h5>
+    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="space-y-6">
+        <div>
+          <label htmlFor="old_password" className="block mb-2 text-gray-600 font-semibold">
+            Old Password
+          </label>
+          <div className="relative">
+            <input
+              type={showOldPassword ? "text" : "password"}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-shadow"
+              onChange={handleChange}
+              id="old_password"
+              name="old_password"
+              required
+            />
+            <span
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+              onClick={() => setShowOldPassword(!showOldPassword)}
+            >
+              <i className={showOldPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="new_password" className="block mb-2 text-gray-600 font-semibold">
+              New Password
+            </label>
+            <div className="relative">
+              <input
+                type={showNewPassword ? "text" : "password"}
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-shadow"
+                onChange={handleChange}
+                id="new_password"
+                name="new_password"
+                required
+              />
+              <span
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+                onClick={() => setShowNewPassword(!showNewPassword)}
+              >
+                <i className={showNewPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
+              </span>
+            </div>
+          </div>
+          <div>
+            <label htmlFor="confirm_password" className="block mb-2 text-gray-600 font-semibold">
+              Confirm New Password
+            </label>
+            <div className="relative">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-shadow"
+                onChange={handleChange}
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+              <span
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                <i className={showConfirmPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <button
+            type="submit"
+            className="w-full bg-purple-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-800 transition-colors"
+          >
+            🔄 Update Password
+          </button>
+        </div>
       </div>
+    </form>
+  </div>
+</div>
+
     </>
   );
 }

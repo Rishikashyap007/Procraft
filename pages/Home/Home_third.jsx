@@ -197,37 +197,40 @@ function Home_third() {
   return (
     <>
       <div className='py-10 mb-3'>
-        <div className='flex justify-center'>
-          <div className='md:w-[78%] rounded-xl py-5 px-4' id='home_third'>
-            <div className='flex flex-col gap-2 justify-evenly md:flex-row rounded-xl px-5 text-black'>
+<div className='flex justify-center' data-aos="fade-up">
+  <div className='md:w-[78%] rounded-xl py-5 px-4' id='home_third'>
+    <div className='flex flex-col gap-2 justify-evenly md:flex-row rounded-xl px-5 text-black'>
+      {/* <div>
+        <Image src={image} alt="logo" className='h-[400px] w-[350px] rounded-xl shadow-lg shadow-gray-600' />
+      </div> */}
+      <div className='flex flex-col font-medium px-3 gap-5'>
+        <h1 className='text-center font-ubuntu font-bold text-4xl py-2 text-black'>How Our<span className="text-purple-700"> AI Resume </span>Works For You</h1>
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            { icon: icon1, text: "Check Resume Score in few seconds with just a couple of clicks." },
+            { icon: icon2, text: "Our AI does deep checks on your resume & suggests you edits." },
+            { icon: icon3, text: "Land in Abroad Interviews with our AI technology." },
+            { icon: icon4, text: "Improve Resume with our robust AI, in just a few clicks." }
+          ].map((item, index) => (
+            <div key={index} className='flex items-center shadow-lg rounded-2xl px-3 py-2 shadow-gray-600 hover:border-b-2 hover:border-slate-500 gap-2'>
               <div>
-                <Image src={image} alt="logo" className='h-[400px] w-[400px] rounded-xl shadow-lg shadow-gray-600' />
+                <Image src={item.icon} alt="logo" className='h-20 w-20' />
               </div>
-              <div className='flex flex-col font-semibold px-3 gap-5'>
-                <h1 className='text-center font-bold text-4xl py-2 text-black'>How Our AI Resume Works For You</h1>
-                <div>
-                  {[{ icon: icon1, text: "Check Resume Score in few seconds with just a couple of clicks." },
-                    { icon: icon2, text: "Our AI does deep checks on your resume & suggests you edits." },
-                    { icon: icon3, text: "Land in Abroad Interviews with our AI technology." },
-                    { icon: icon4, text: "Improve Resume with our robust AI, in just a few clicks." }].map((item, index) => (
-                      <div key={index} className='flex items-center shadow-lg rounded-2xl px-3 py-2 shadow-gray-600 hover:border-b-2 hover:border-slate-500 hover:rounded-lg gap-2'>
-                        <div>
-                          <Image src={item.icon} alt="logo" className='h-16 w-16' />
-                        </div>
-                        <div className='text-xl'>
-                          <p>{item.text}</p>
-                        </div>
-                      </div>
-                  ))}
-                </div>
+              <div className='text-xl'>
+                <p>{item.text}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div className='flex flex-col gap-5 my-8 rounded-xl justify-center px-5 py-10 shadow-gray-600'>
+
+        <div className='flex flex-col gap-5 my-8 rounded-xl justify-center px-5 py-10 shadow-gray-600' data-aos="fade-up">
           <div className='flex flex-col items-center'>
-            <h1 className='text-3xl font-bold text-center py-6'><span className="text-purple-700">Explore Our</span> Wide Range Of <span className="text-purple-700"> Trending Templates </span> That Recruiters Love To See</h1>
+            <h1 className='text-3xl font-ubuntu font-bold text-center py-6'><span className="text-purple-700">Explore Our</span> Wide Range Of <span className="text-purple-700"> Trending Templates </span> That Recruiters Love To See</h1>
             <div className='flex gap-2'>
               <div className='text-md text-left flex flex-col gap-4'>
                 <div><TickIcon /> Chosen & Crafted by Our Experts</div>
@@ -257,10 +260,10 @@ function Home_third() {
           </div>
         </div>
 
-        <div className='flex flex-col gap-5 px-9 py-7 rounded-xl md:mx-auto'>
+        <div className='flex flex-col gap-5 px-9 py-7 rounded-xl md:mx-auto' data-aos="fade-up">
           <div className='flex flex-col items-center max-w-7xl mx-auto text-center'>
-            <h1 className='text-3xl font-bold text-center py-6'>Make Your Resume Using <span className="text-purple-700"> Real-World Examples</span></h1>
-            <p className='text-xl'>Browse <span className='font-semibold text-purple-700'>350+ popular resume</span> examples covering all types of jobs, industries, and levels of experience. Every example has been reviewed and approved by a Certified Professional Resume Writer (CPRW).</p>
+            <h1 className='text-3xl font-bold font-ubuntu text-center py-6'>Make Your Resume Using <span className="text-purple-700"> Real-World Examples</span></h1>
+            <p className='text-xl font-ubuntu'>Browse <span className='font-semibold text-purple-700'>350+ popular resume</span> examples covering all types of jobs, industries, and levels of experience. Every example has been reviewed and approved by a Certified Professional Resume Writer (CPRW).</p>
           </div>
           <div className='flex flex-col justify-center gap-5 items-center md:flex-row'>
             {[
@@ -280,11 +283,16 @@ function Home_third() {
           </div>
         </div>
 
-        <div className='flex flex-col gap-5 px-5 py-10'>
-          <div className='flex flex-col items-center'>
-            <h1 className='text-3xl font-bold text-center py-6'>Looking For Impressive Cover Letters?</h1>
-            <p className='text-lg'>Explore from our 25+ premium Cover Letters, which are exclusively crafted by our Experts.</p>
-          </div>
+        <div className='flex flex-col gap-5 px-5 py-10' data-aos="fade-up">
+        <div className='flex flex-col items-center'>
+    <h1 className='text-3xl font-ubuntu font-bold text-center py-6'>
+        Looking For Impressive <span className="text-purple-700">Cover Letters?</span>
+    </h1>
+    <p className='text-lg font-ubuntu'>
+        Explore from our <span className="text-purple-700 font-bold">25+ premium Cover Letters,</span> which are exclusively crafted by our Experts.
+    </p>
+</div>
+
           <div className='flex flex-col justify-center gap-5 items-center md:flex-row'>
             {[
               { src: cvimage1, alt: "Cover Letter Example", title: "Cover Letter Example" },
@@ -295,7 +303,7 @@ function Home_third() {
                 <Image src={template.src} alt={template.alt} className='h-[400px] w-full border-2 rounded-lg shadow-xl shadow-gray-500' />
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
                 <Link href="/dashboard/profile">
-                  <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit bg-blue-600 text-white font-bold py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Create Your CV</button>
+                  <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit bg-purple-700 text-white font-bold font-ubuntu py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Create Your CV</button>
                 </Link>
               </div>
             ))}

@@ -113,7 +113,7 @@ const Skills = () => {
             </p>
             <button
               onClick={handleContinue}
-              className="bg-gray-400 text-black px-4 py-2 rounded-lg shadow-xl font-semibold"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg shadow-xl font-semibold"
             >
               Continue
             </button>
@@ -128,16 +128,16 @@ const Skills = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-5 py-5 text-center">
             {skills.length > 0 ? (
               skills.map((skill, index) => (
-                <div key={index} className="bg-indigo-900 rounded-xl shadow-2xl border-2 border-slate-600 px-5 py-4 text-center">
-                  <h3 className="text-2xl sm:text-3xl text-white font-semibold py-3">{skill.name || 'Add skill from CV'}</h3>
-                  <p className="text-center text-white py-1">❓ Total Questions: {skill.total_question || '15'}</p>
-                  <p className="text-center text-white py-1">📌 Right Answers: {skill.right_answer || '0'}</p>
-                  <p className="text-center text-white py-1">⚠️ Wrong Answers: {skill.wrong_answer || '0'}</p>
-                  <p className="text-center text-white py-1">📈 Percentage: {Math.floor(skill.Percentage) || '0'}</p>
+                <div key={index} className="bg-gray-100 rounded-xl shadow-2xl border-2 border-slate-600 px-5 py-4 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-semibold py-3">{skill.name || 'Add skill from CV'}</h3>
+                  <p className="text-center  py-1">❓ Total Questions: {skill.total_question || '15'}</p>
+                  <p className="text-center  py-1">📌 Right Answers: {skill.right_answer || '0'}</p>
+                  <p className="text-center  py-1">⚠️ Wrong Answers: {skill.wrong_answer || '0'}</p>
+                  <p className="text-center py-1">📈 Percentage: {Math.floor(skill.Percentage) || '0'}</p>
                   <div className="flex justify-center py-6">
                     <button
                       onClick={() => handleTakeTest(skill.id, skill.name)}
-                      className="px-8 py-2 rounded-xl shadow-xl bg-gray-400 text-black font-semibold"
+                      className="px-8 py-2 rounded-xl shadow-xl bg-purple-800 text-white font-semibold"
                     >
                       ✍ Take Test
                     </button>

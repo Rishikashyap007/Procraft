@@ -332,13 +332,13 @@ const LoadUnload = () => {
           <div className="bg-white p-5 md:p-10 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 text-center relative">
             <button
               onClick={handleBack}
-              className="absolute top-4 left-4 text-gray-600 hover:text-blue-600 transition-colors flex items-center gap-2"
+              className="absolute top-4 left-4 text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-2"
             >
               <FaArrowLeft className="text-xl" />
               <span>Back</span>
             </button>
             
-            <h1 className="text-xl md:text-2xl font-bold mb-4 mt-8 md:mt-16">Are you uploading an existing resume?</h1>
+            <h1 className="text-xl md:text-2xl font-bold mb-4 mt-8 md:mt-16">Are you uploading an <span className="text-purple-700"> existing resume?</span></h1>
             <p className="text-gray-600 mb-5">Just review, edit, and update it with new information</p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-5">
@@ -360,7 +360,7 @@ const LoadUnload = () => {
                 </label>
 
                 <button
-                  className={`p-2 mt-4 w-full text-white bg-blue-800 rounded ${loading ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600 transition"}`}
+                  className={`p-2 mt-4 w-full text-white bg-purple-600 rounded ${loading ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600 transition"}`}
                   onClick={handleUpload}
                   disabled={loading}
                 >
@@ -379,7 +379,7 @@ const LoadUnload = () => {
                   We will guide you through the whole process so your skills can shine
                 </p>
                 <button
-                  className="p-2 w-full mt-8 md:mt-20 text-white bg-yellow-500 rounded hover:bg-red-600 transition"
+                  className="p-2 w-full mt-8 md:mt-20 text-purple-700 bg-gray-100 rounded hover:bg-green-600 hover:text-white transition"
                   onClick={handleStartFromScratch}
                 >
                   Start From Scratch

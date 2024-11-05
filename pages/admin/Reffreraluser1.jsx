@@ -26,9 +26,9 @@ function Reffreraluser1() {
         {users.length === 0 ? (
           <p className="text-lg text-gray-500">There is no data available.</p>
         ) : (
-          <table className="min-w-full bg-dark text-black rounded-md text-center">
+          <table className="min-w-full text-black rounded-md text-center">
             <thead>
-              <tr className='bg-violet-300'>
+              <tr className='bg-purple-600'>
                 
                 <th className="py-2 px-4">Name</th>
                 <th className="py-2 px-4">Email</th>

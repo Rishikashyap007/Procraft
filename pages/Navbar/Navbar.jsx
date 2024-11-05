@@ -205,7 +205,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-100 border-b border-gray-200 shadow-sm">
+    <nav className="bg-gray-100 border-b border-gray-200 shadow-sm font-ubuntu">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
@@ -253,9 +253,9 @@ const Navbar = () => {
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md text-gray-700">
-                    <Link href="/" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>Home</Link>
-                    <Link href="/dashboard/page" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>Profile</Link>
-                    <button onClick={() => { handleLogout(); setIsDropdownOpen(false); }} className="block w-full text-left px-4 py-2 hover:bg-gray-100">Logout</button>
+                    <Link href="/" className="block px-4 py-2 text-purple-700 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>Home</Link>
+                    <Link href="/dashboard/page" className="block px-4 py-2 text-purple-700 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>Profile</Link>
+                    <button onClick={() => { handleLogout(); setIsDropdownOpen(false); }} className="block w-full text-left px-4 py-2 text-purple-700 hover:bg-gray-100">Logout</button>
                   </div>
                 )}
               </div>
