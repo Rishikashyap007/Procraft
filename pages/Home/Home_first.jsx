@@ -127,7 +127,7 @@ function Home_first() {
         <div className="flex justify-center mb-4">
           <a
             href="tel:+1 8887936474"
-            className="text-black bg-red-300 px-3 py-4 rounded-3xl font-bold text-center sm:hidden"
+            className="text-white bg-purple-600 px-3 py-4 rounded-3xl font-bold text-center sm:hidden"
           >
             Contact us
           </a>

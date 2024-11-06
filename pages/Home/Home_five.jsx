@@ -62,44 +62,45 @@ const Home_five = () => {
     // </div>
 
     <div className="bg-gray-100 py-8">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 className="text-center font-bold font-ubuntu text-2xl py-4 leading-tight">
-      Want To Supercharge Your Career Growth with Our <span className="text-purple-800"> AI Tool</span>
-    </h1>
-    <div className="flex justify-center">
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6">
-        <h2 className="font-bold text-lg mb-3 text-center"><span className="text-purple-800">Procraftr </span>Builder</h2>
-        <div className="grid grid-cols-4 gap-4">
-          {[
-            "AI Score",
-            "AI Parsing",
-            "Resume Building",
-            "AI Enhancer",
-            "Match & Apply",
-            "AI Skill Test",
-            "Skill Badges",
-            "& More",
-          ].map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-2 p-2 bg-gray-100 rounded-lg shadow-sm text-center"
-            >
-              {/* <i className="fa-solid fa-check text-white bg-green-500 p-1.5 rounded-full"></i> */}
-              <TickIcon />
-              <span className="text-sm font-medium">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center mt-5">
-          <Link href={isAuthenticated ? "/dashboard" : "/login2"}>
-            <button className="px-4 py-2 rounded-xl font-semibold text-purple-700 bg-white hover:bg-purple-600 hover:text-white shadow-md transition">
-              Get Started For Free
-            </button>
-          </Link>
-        </div>
+ <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+  <h1 className="text-center font-bold font-ubuntu text-2xl py-4 leading-tight">
+    Want To Supercharge Your Career Growth with Our <span className="text-purple-800"> AI Tool</span>
+  </h1>
+  <div className="flex justify-center">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 max-w-7xl w-full"> {/* Increased width */}
+      <h2 className="font-bold text-lg mb-3 text-center"><span className="text-purple-800">Procraftr </span>Builder</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:grid-cols-2">
+        {[
+          "AI Score",
+          "AI Parsing",
+          "Resume Building",
+          "AI Enhancer",
+          "Match & Apply",
+          "AI Skill Test",
+          "Skill Badges",
+          "& More",
+        ].map((item) => (
+          <div
+            key={item}
+            className="flex items-center gap-2 p-2 bg-gray-100 rounded-lg shadow-sm text-center"
+          >
+            {/* <i className="fa-solid fa-check text-white bg-green-500 p-1.5 rounded-full"></i> */}
+            <TickIcon />
+            <span className="text-sm font-medium">{item}</span>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center mt-5">
+        <Link href={isAuthenticated ? "/dashboard" : "/login2"}>
+          <button className="px-4 py-2 rounded-xl font-semibold text-purple-700 bg-white hover:bg-purple-600 hover:text-white shadow-md transition">
+            Get Started For Free
+          </button>
+        </Link>
       </div>
     </div>
   </div>
+</div>
+
 </div>
 
   );

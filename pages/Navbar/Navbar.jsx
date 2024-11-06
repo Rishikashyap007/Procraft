@@ -216,7 +216,7 @@ const Navbar = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex sm:text-medium space-x-4">
             <Link href="/navbarcontent" className="text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600">
               AI Resume Builder
               <span className="block h-0.5 bg-purple-600 transition-all duration-200 transform scale-x-0 group-hover:scale-x-100"></span>

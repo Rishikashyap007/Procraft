@@ -413,8 +413,8 @@ const ProfileForm = () => {
     // </div>
 
     <div className="p-4 md:p-8">
-  <div className="w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6"> {/* Increased width here */}
-    <h1 className="text-3xl font-bold mb-6 text-center">BASIC INFORMATION</h1>
+  <div className="w-full max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-6"> 
+  <h1 className="text-3xl font-bold mb-6 text-center">BASIC INFORMATION</h1>
     
     <form onSubmit={handleSubmit}>
       <div className="mb-4">

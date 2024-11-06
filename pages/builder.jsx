@@ -782,8 +782,8 @@ export default function Builder({ onClose }) {
   };
   const getLinkClassName = (path) => {
     return router.pathname === path
-      ? "flex items-center p-2 bg-violet-900 border-b-2 rounded font-semibold text-white"
-      : "flex items-center p-2 hover:bg-violet-900  border-b-2 rounded font-semibold  ";
+      ? "flex items-center p-2 bg-purple-600 border-b-2 rounded font-semibold text-white"
+      : "text-gray-700 px-3 py-2 rounded-md text-lg font-bold group hover:text-purple-600 ";
   };
 
   const handleFinish = async () => {
@@ -889,171 +889,170 @@ export default function Builder({ onClose }) {
       </Modal>
       <div className="relative">
        {/* Toggle button for smaller screens  */}
-      <button
+      {/* <button
         onClick={toggleSidebar}
-        className="md:hidden p-2 text-white bg-blue-900 fixed top-4 left-4 z-50 rounded "
+        className="md:hidden sm:hidden p-2 text-white bg-purple-800 fixed top-4 left-4 z-50 rounded "
       >
         ☰
-      </button>
+      </button> */}
 
       {/* Sidebar */}
       <div
-        className={`bg-white h-screen p-4 border-r border-gray-200 md:block fixed md:relative top-0 left-0 transition-transform duration-300 ease-in-out ${
+        className={`hidden md:block bg-white h-screen p-4 border-r border-gray-200  fixed  md:relative top-0 left-0 transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
-        <ul className="space-y-2 mt-4">
-          <li>
-            <Link
-              href=""
-              className="flex items-center p-2 bg-blue-900 border-b-2 border-black font-semibold text-white"
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-10">🖥️</span>
-              <span>Dashboard</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/page"
-              className={getLinkClassName("/dashboard/page")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">👤</span>
-              <span>Profile</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="aibuilder"
-              className={getLinkClassName("/dashboard/aibuilder")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">🤖</span>
-              <span>AI Resume Builder</span>
-            </Link>
-          </li>
-          <li
-           className={getLinkClassName("/dashboard/resumelist")}
-          onClick={() => { setIsModalOpen(true); toggleSidebar(); }}>
-            
-            <span className="mx-2">📑</span>
-            <span>Resumes List</span>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/notification"
-              className={getLinkClassName("/dashboard/notification")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">🔔</span>
-              <span>Notifications</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/skilltest"
-              className={getLinkClassName("/dashboard/skilltest")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">📝</span>
-              <span>Skill Test</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/addrefferal"
-              className={getLinkClassName("/dashboard/addrefferal")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">👥</span>
-              <span>Add Referral</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/skillhistorylist"
-              className={getLinkClassName("/dashboard/skillhistorylist")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">📊</span>
-              <span>Skill History</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="reffrerallistpage"
-              className={getLinkClassName("/dashboard/reffrerallistpage")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">👥</span>
-              <span>Referral List</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/paymentpage"
-              className={getLinkClassName("/dashboard/paymentpage")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">💳</span>
-              <span>Payment</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="password"
-              className={getLinkClassName("/dashboard/password")}
-              onClick={() => {
-                onClose();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">🔑</span>
-              <span>Change Password</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/"
-              className="flex items-center p-2 hover:bg-violet-900 border-b-2 rounded font-semibold"
-              onClick={() => {
-                handleLogout();
-                toggleSidebar();
-              }}
-            >
-              <span className="mr-2">🔓</span>
-              <span>Log Out</span>
-            </Link>
-          </li>
-        </ul>
+        <ul className="space-y-2 mt-4 hidden md:block">
+       
+  <li>
+    <Link
+      href=""
+      className="flex items-center p-2 bg-gray-700 border-b-2 border-black font-semibold text-white"
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-10">🖥️</span>
+      <span>Dashboard</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/dashboard/page"
+      className={getLinkClassName("/dashboard/page")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">👤</span>
+      <span>Profile</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="aibuilder"
+      className={getLinkClassName("/dashboard/aibuilder")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">🤖</span>
+      <span>AI Resume Builder</span>
+    </Link>
+  </li>
+  <li onClick={() => { setIsModalOpen(true); toggleSidebar(); }}>
+    <span className="mx-2 cursor-pointer">📑</span>
+    <span><b>Resumes List</b></span>
+  </li>
+  <li>
+    <Link
+      href="notification"
+      className={getLinkClassName("/dashboard/notification")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">🔔</span>
+      <span>Notifications</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="skilltest"
+      className={getLinkClassName("/dashboard/skilltest")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">📝</span>
+      <span>Skill Test</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="addrefferal"
+      className={getLinkClassName("/dashboard/addrefferal")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">👥</span>
+      <span>Add Referral</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="skillhistorylist"
+      className={getLinkClassName("/dashboard/skillhistorylist")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">📊</span>
+      <span>Skill History</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="reffrerallistpage"
+      className={getLinkClassName("/dashboard/reffrerallistpage")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">👥</span>
+      <span>Referral List</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="paymentpage"
+      className={getLinkClassName("/dashboard/paymentpage")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">💳</span>
+      <span>Payment</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="password"
+      className={getLinkClassName("/dashboard/password")}
+      onClick={() => {
+        onClose();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">🔑</span>
+      <span>Change Password</span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/"
+      className="flex items-center p-2 hover:bg-purple-800 hover:text-white border-b-2 rounded font-semibold"
+      onClick={() => {
+        handleLogout();
+        toggleSidebar();
+      }}
+    >
+      <span className="mr-2">🔓</span>
+      <span>Log Out</span>
+    </Link>
+  </li>
+</ul>
+
       </div>
     </div>
            <div>
@@ -1066,7 +1065,7 @@ export default function Builder({ onClose }) {
             type="button"
             onClick={handlePrevious}
             disabled={currentSection === 0}
-            className="w-40 h-10 rounded-lg bg-purple-700 text-white font-medium transition-colors hover:bg-white hover:text-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-40 h-10 sm:block md:block rounded-lg bg-purple-700 text-white font-medium transition-colors hover:bg-white hover:text-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Previous
           </button>
@@ -1074,7 +1073,7 @@ export default function Builder({ onClose }) {
           <button
             type="button"
             onClick={handleNext}
-            className="w-40 h-10 rounded-lg bg-yellow-500 text-black font-medium transition-colors hover:bg-yellow-400"
+            className="w-40 h-10 sm:block md:block rounded-lg bg-yellow-500 text-black font-medium transition-colors hover:bg-yellow-400"
           >
             {currentSection === sections.length - 1 ? "Finish" : "Next"}
           </button>
@@ -1115,7 +1114,8 @@ export default function Builder({ onClose }) {
       <nav className={`bg-gray-100 transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out`}>
-        <ul className="flex flex-row gap-4 items-center overflow-x-auto py-2 px-4">
+        {/* <ul className="flex hidden md:block flex-row gap-4 items-center overflow-x-auto py-2 px-4"> */}
+        <ul className="hidden md:flex flex-row gap-4 items-center overflow-x-auto py-2 px-4">
           {sections.map((section, index) => (
             <li
               key={index}

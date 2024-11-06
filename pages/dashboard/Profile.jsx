@@ -463,23 +463,25 @@ const ProfilePage = () => {
       <Navbar/>
       <div className="bg-gray-200 p-4 font-ubuntu">
         <div className="max-w-full mx-auto">
-          <div className="rounded-lg shadow-lg p-6 bg-purple-700 flex flex-col md:flex-row justify-between items-center md:h-44">
-            <div className="space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-full">
-              <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
+          <div className="rounded-lg shadow-lg p-8 bg-purple-700 flex flex-col md:flex-row justify-between items-center md:h-44">
+            <div className="flex justify-start items-center space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-1/2">
+              <div className="flex flex-col w-1/2 md:flex-row md:items-center md:space-x-4">
                 <img
                   src={`https://api.resumeintellect.com/${formData.photo}` || "https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"}
                   alt="Please Upload Profile Photo"
                   className="w-20 h-20 rounded-full mb-4 md:mb-0"
                 />
-                <div className="text-white">
-                  <h2 className="text-xl font-ubuntu font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
-                  <p>{formData.professional_title || "Please update your Profile Title!"}</p>
+                <div className="md:m-2 md:p-2 text-white ">
+                  <div >
+                  <h2 className="md:m-2 md:p-2 text-sm sm:text-base md:text-lg lg:text-xl font-ubuntu font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
+                  <p className="md:ml-4 md:mb-2 text-sm sm:text-base md:text-lg lg:text-xl font-ubuntu font-medium">{formData.professional_title || "Please update your Profile Title!"}</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:ms-20">
-                <div>
-                  <p className="text-white font-ubuntu">📧 {formData.email || "Please update your [Email]"}</p>
-                  <p className="text-white font-ubuntu">📱 {formData.phone || "Please update your [Phone]"}</p>
+              <div className="grid grid-cols-1 w-1/2 md:grid-cols-2 gap-4 md:ms-20">
+                <div className="border-l-4 border-gray-500">
+                  <p className="flex text-white font-ubuntu text-sm sm:text-base md:text-lg lg:text-xl font-medium"><span>📧</span>{formData.email || <span>"Please update your [Email]"</span>}</p>
+                  <p className="flex text-white font-ubuntu text-sm sm:text-base md:text-lg lg:text-xl font-medium"><span>📱</span>{formData.phone || <span>"Please update your [Phone]"</span>}</p>
                 </div>
               </div>
             </div>
@@ -507,7 +509,7 @@ const ProfilePage = () => {
                   </button>
                 </div>
               )}
-              <div className="flex flex-col md:flex-row items-center w-1/2">
+              <div className="flex flex-col md:flex-row items-center w-1/2 ">
                 <input
                   type="file"
                   onChange={handleFileChange}
@@ -517,7 +519,7 @@ const ProfilePage = () => {
                 />
                 <label
                   htmlFor="fileInput"
-                  className="bg-gray-100 text-purple-600 px-4 py-2 flex items-center justify-center rounded-lg hover:bg-purple-900 hover:text-white cursor-pointer md:w-auto text-center"
+                  className="bg-gray-100 text-purple-600 px-4 py-5 flex items-center justify-center rounded-lg hover:bg-purple-900 hover:text-white cursor-pointer md:w-auto text-center"
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">

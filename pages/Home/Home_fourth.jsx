@@ -39,7 +39,7 @@ const Home_fourth = () => {
         <div className="flex justify-center mt-10">
         <Link href={"https://blog.resumeintellect.com/"}>
           <button className="px-6 py-3 text-lg font-semibold font-ubuntu text-white bg-purple-700 hover:bg-white hover:text-purple-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600">
-            Get More Career Advice
+             More Career Advice
           </button></Link>
         </div>
       </div>
