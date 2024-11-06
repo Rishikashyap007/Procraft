@@ -249,7 +249,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import Navbar from "../Navbar/Navbar";
-
+import Image from "next/image";
 const ProfilePage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
@@ -260,6 +260,7 @@ const ProfilePage = () => {
   const [modalResumeName, setModalResumeName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [fileName,setFileName]=useState(null);
 
   const [formData, setFormData] = useState({
     photo: '',
@@ -391,6 +392,10 @@ const ProfilePage = () => {
       setSelectedFile(null);
       return;
     }
+    console.log(file.name)
+    // const fileName=file.name;
+     setFileName(file?.name)
+    console.log('File name:', fileName);
 
     setSelectedFile(file);
     handleFileUpload(file);
@@ -461,112 +466,175 @@ const ProfilePage = () => {
   return (
     <>
       <Navbar/>
-      <div className="bg-gray-200 p-4 font-ubuntu">
-        <div className="max-w-full mx-auto">
-          <div className="rounded-lg shadow-lg p-8 bg-purple-700 flex flex-col md:flex-row justify-between items-center md:h-44">
-            <div className="flex justify-start items-center space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-1/2">
-              <div className="flex flex-col w-1/2 md:flex-row md:items-center md:space-x-4">
-                <img
-                  src={`https://api.resumeintellect.com/${formData.photo}` || "https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"}
-                  alt="Please Upload Profile Photo"
-                  className="w-20 h-20 rounded-full mb-4 md:mb-0"
-                />
-                <div className="md:m-2 md:p-2 text-white ">
-                  <div >
-                  <h2 className="md:m-2 md:p-2 text-sm sm:text-base md:text-lg lg:text-xl font-ubuntu font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
-                  <p className="md:ml-4 md:mb-2 text-sm sm:text-base md:text-lg lg:text-xl font-ubuntu font-medium">{formData.professional_title || "Please update your Profile Title!"}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 w-1/2 md:grid-cols-2 gap-4 md:ms-20">
-                <div className="border-l-4 border-gray-500">
-                  <p className="flex text-white font-ubuntu text-sm sm:text-base md:text-lg lg:text-xl font-medium"><span>📧</span>{formData.email || <span>"Please update your [Email]"</span>}</p>
-                  <p className="flex text-white font-ubuntu text-sm sm:text-base md:text-lg lg:text-xl font-medium"><span>📱</span>{formData.phone || <span>"Please update your [Phone]"</span>}</p>
-                </div>
-              </div>
-            </div>
-            <div className="hidden md:block border-[0.5px] border-gray-500 h-40"></div>
+      
+
+<div className="bg-gray-200 p-4 font-ubuntu">
+  <div className="max-w-5xl mx-auto">
+    <div className="rounded-lg shadow-lg p-8 bg-purple-700 flex flex-col md:flex-row justify-between items-center md:h-44 space-y-6 md:space-y-0 md:space-x-6">
+      
+      {/* Profile Section */}
+      <div className="items-center space-y-4 md:space-y-0 w-full md:w-1/2">
+        <div className="flex items-center space-x-4 w-full">
+          <Image
+            src={
+              `https://api.resumeintellect.com/${formData.photo}` || 
+              "https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"
             
-            <div className="flex items-center justify-center">
+            }
+            width={100}
+            alt="Please Upload Profile Photo"
+            className="w-20 h-20 rounded-full"
+          />
+          <div className="text-white">
+            <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
+            {formData.first_name || "Please update your [Name]"}&quot;
+            {formData.last_name || "!"}
 
-            <div className="flex flex-row justify-start items-start ">
-              {resumes.length > 0 && (
-                <div key={resumes[0].id} className=" border-gray-700 w-1/2 ">
-                  <button
-                    className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800"
-                    onClick={() => handleGetScore(resumes[0])}
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                        </svg>
-                        Loading...
-                      </span>
-                    ) : scores[resumes[0].id] !== undefined ? scores[resumes[0].id] : 'Resume Score'}
-                  </button>
-                </div>
-              )}
-              <div className="flex flex-col md:flex-row items-center w-1/2 ">
-                <input
-                  type="file"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  id="fileInput"
-                  accept=".pdf"
-                />
-                <label
-                  htmlFor="fileInput"
-                  className="bg-gray-100 text-purple-600 px-4 py-5 flex items-center justify-center rounded-lg hover:bg-purple-900 hover:text-white cursor-pointer md:w-auto text-center"
-                >
-                  {isLoading ? (
-                    <span className="flex items-center justify-center">
-                      <svg className="animate-spin h-5 w-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                      </svg>
-                      Uploading... {uploadProgress}%
-                    </span>
-                  ) : (
-                    'Upload Resume'
-                  )}
-                </label>
-                {selectedFile && (
-                  <span className="text-white ml-2 truncate max-w-xs">
-                    {selectedFile.name}
-                  </span>
-                )}
-              </div>
-            </div>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium">
+              {formData.professional_title || "Please update your Profile Title!"}
+            </p>
           </div>
-            </div>
-
-          {isModalOpen && (
-            <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-              <div className="bg-gray-700 p-10 rounded shadow-lg text-white">
-                <h2 className="text-xl font-semibold text-white">Resume Score</h2>
-                <p><strong>Content Accuracy Percentage: </strong> {modalContent}</p>
-                <div className="flex mt-4">
-                  <button
-                    onClick={copyToClipboard}
-                    className="bg-blue-500 text-white py-1 px-4 rounded mr-2 hover:bg-blue-600"
-                  >
-                    Copy
-                  </button>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="bg-yellow-500 text-white py-1 px-4 rounded hover:bg-yellow-600"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
+        </div>
+        
+        <div className="w-full md:w-1/2 mt-4 md:mt-0 md:ms-10">
+          <div className="border-l-4 border-gray-500 pl-4">
+            <p className="text-white font-medium flex items-center space-x-2">
+              <span>📧</span>
+              {formData.email || <span>Please update your [Email]</span>}
+            </p>
+            <p className="text-white font-medium flex items-center space-x-2">
+              <span>📱</span>
+              {formData.phone || <span>Please update your [Phone]</span>}
+            </p>
+          </div>
         </div>
       </div>
+
+      {/* Divider */}
+      <div className="hidden md:block border-[0.5px] border-gray-500 h-40"></div>
+
+      {/* Resume Actions Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 space-y-4 md:space-y-0 md:space-x-6">
+        
+        {/* Resume Score Button */}
+        {resumes.length > 0 && (
+          <div className="w-full md:w-1/3">
+            <button
+              className="bg-black text-white p-4 rounded-lg hover:bg-gray-800 w-full"
+              onClick={() => handleGetScore(resumes[0])}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                    ></path>
+                  </svg>
+                  Loading...
+                </span>
+              ) : scores[resumes[0].id] !== undefined ? scores[resumes[0].id] : 'Resume Score'}
+            </button>
+          </div>
+        )}
+
+        {/* Upload Resume Button */}
+        <div className="w-full md:w-1/3">
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="hidden"
+            id="fileInput"
+            accept=".pdf"
+          />
+          <label
+            htmlFor="fileInput"
+            className="bg-gray-100 text-purple-600 p-4 flex items-center justify-center rounded-lg hover:bg-purple-900 hover:text-white cursor-pointer w-full text-center"
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  ></path>
+                </svg>
+                Uploading... {uploadProgress}%
+              </span>
+            ) : (
+              'Upload Resume'
+            )}
+          </label>
+          {selectedFile && (
+            <span className="text-white mt-2 truncate max-w-xs">
+              {selectedFile.name}
+            </span>
+          )}
+        </div>
+
+        {/* Uploaded Resume Display */}
+        <div className="w-full md:w-1/3 text-white text-center">
+          Uploaded: {!isLoading&&fileName ? <span>{fileName}</span> : "No file uploaded"}
+        </div>
+      </div>
+    </div>
+
+    {/* Modal */}
+    {isModalOpen && (
+      <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+        <div className="bg-gray-700 p-10 rounded shadow-lg text-white max-w-md w-full">
+          <h2 className="text-xl font-semibold">Resume Score</h2>
+          <p><strong>Content Accuracy Percentage: </strong> {modalContent}</p>
+          <div className="flex mt-4">
+            <button
+              onClick={copyToClipboard}
+              className="bg-blue-500 text-white py-1 px-4 rounded mr-2 hover:bg-blue-600"
+            >
+              Copy
+            </button>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="bg-yellow-500 text-white py-1 px-4 rounded hover:bg-yellow-600"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+
     </>
   );
 };

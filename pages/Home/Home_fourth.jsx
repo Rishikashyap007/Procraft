@@ -1,6 +1,7 @@
 import Link from "next/link";
 import blog3 from './Images/blog3.jpg'
 import Home_five from "./Home_five";
+import Image from "next/image";
 
 const Home_fourth = () => {
 
@@ -22,12 +23,12 @@ const Home_fourth = () => {
          <div id="course" className="bg-gray-100 py-10 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl lg:text-5xl font-bold font-ubuntu px-4 lg:px-0 py-5 text-center">Newest Strategies From Our <span className="text-purple-700"> Career Search Advisors</span> </h1>
-        <p className="mx-auto px-4 lg:px-0 text-lg lg:text-base text-gray-700 max-w-4xl text-center mb-8 font-ubuntu">You’re never alone in your job search. Whether you’re writing a cover letter, preparing for the interview, or negotiating your salary, our resource center has articles that will help you take the next step in your career.</p>
+        <p className="mx-auto px-4 lg:px-0 text-lg lg:text-base text-gray-700 max-w-4xl text-center mb-8 font-ubuntu">You are never alone in your job search. Whether you are writing a cover letter, preparing for the interview, or negotiating your salary, our resource center has articles that will help you take the next step in your career.</p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {course.map((card, index) => (
             <a key={index} href={card.link} target='_blank' rel="noopener noreferrer" className="flex flex-col items-center justify-between h-full bg-white rounded-xl shadow-md overflow-hidden transition duration-300 transform hover:scale-105">
-              <img src={card.img} alt="Course" className="w-full h-auto border-2 rounded-t-md" />
+              <Image src={card.img} alt="Course" className="w-full h-auto border-2 rounded-t-md" />
               <div className="p-4">
                 <h2 className="text-lg lg:text-lg font-bold font-ubuntu mb-2">{card.title}</h2>
                 {/* <p className="text-sm text-gray-600">{card.name}</p> */}

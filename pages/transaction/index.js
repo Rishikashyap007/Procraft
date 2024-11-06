@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router"; // Import useRouter from next/router
+import Image from "next/image";
 
 const Index = () => {
   const [verificationResult, setVerificationResult] = useState(null);
@@ -55,12 +56,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+              <Image src="https://i.ibb.co/G9DC8S0/404-2.png" alt="transaction img" width={100} height={100}/>
             </div>
           </div>
         </div>
         <div>
-          <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+          <Image src="https://i.ibb.co/ck1SGFJ/Group.png" alt="transaction img" width={100} height={100}/>
         </div>
       </div>
 

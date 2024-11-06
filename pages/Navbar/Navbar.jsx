@@ -211,7 +211,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex items-center">
             <Link href="/">
-              <Image src={logo} alt="logo" className="h-10 w-40 rounded-lg" />
+              <Image src={logo} alt="logo" className="h-10 w-40 rounded-lg" width={180} height={100}/>
             </Link>
           </div>
 
@@ -245,10 +245,12 @@ const Navbar = () => {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="flex items-center bg-gray-50 text-gray-800 hover:text-purple-600 px-4 py-2 text-md font-semibold border-2 border-gray-200 rounded-xl"
                 >
-                  <img
+                  <Image
                     src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
                     alt="User"
                     className="w-8 h-8 rounded-full"
+                    width={180}
+                    height={100}
                   />
                 </button>
                 {isDropdownOpen && (
