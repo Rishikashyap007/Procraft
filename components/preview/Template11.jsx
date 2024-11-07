@@ -41,11 +41,7 @@ const Template11 = () => {
       <div className="max-w-4xl mx-auto bg-white p-8 border border-gray-200 rounded-lg shadow-lg">
         <div className="header flex bg-[#2b3d63] text-white p-5 items-center" style={{ backgroundColor: backgroundColorss }}>
           <div className="profile-pic mr-5">
-            {/* <img
-            src="profile-pic.jpg"
-            alt="Profile Picture"
-            className="rounded-full w-24 h-24"
-          /> */}
+           
             <Image
               src={resumeData.profilePicture}
               alt="profile"

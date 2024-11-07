@@ -59,7 +59,7 @@ function AdminLogin() {
         <ToastContainer/>
         <div className="p-8 rounded-xl shadow-lg shadow-slate-700 w-full max-w-lg bg-gray-600">
           <div className="flex justify-center mb-6">
-            <Image src={logo} className=" " alt="Logo" />
+            <Image src={logo} className=" " alt="Logo" height={100} width={100}/>
           </div>
           <div className="text-3xl text-white text-center font-bold mb-9">
           🛡️ Admin Login

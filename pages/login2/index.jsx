@@ -65,7 +65,7 @@ router.push("/dashboard/page");
       <div className="flex justify-center items-center h-screen w-full">
         <div className="p-8 rounded-xl shadow-lg shadow-slate-700 w-full max-w-lg bg-white">
           <div className="flex justify-center mb-6">
-            <Image src={logo} className="w-40 h-10" alt="Logo" />
+            <Image src={logo} className="w-40 h-10" alt="Logo" width={100} height={100} />
           </div>
           <div className="text-2xl text-black text-center font-bold mb-4">
            <span className="text-purple-600">Welcome </span>Back

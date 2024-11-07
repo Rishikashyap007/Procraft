@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 // Importing draggable components dynamically
 const DragDropContext = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.DragDropContext), { ssr: false });
 const Droppable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Droppable), { ssr: false });
@@ -42,7 +43,7 @@ const Template22 = () => {
           <div class=""> 
             <div class="flex mb-5">
                 <div class="ml-5 p-5">
-                  <img src="img/profile_one.png"></img>
+                  <Image src="img/profile_one.png" alt="profile-image" width={100} height={100}/>
                 </div>
                 <div class="p-5">
                     <h1 className="text-4xl font-bold mb-2 text-blue-900" style={{ color: headerColor }}>{resumeData.name}</h1>

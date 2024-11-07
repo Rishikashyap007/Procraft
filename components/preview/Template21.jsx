@@ -8,7 +8,7 @@ import DateRange from "../utility/DateRange";
 import Language from "./Language";
 import Skills from "./Skills";
 import Certification from "./Certification";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import {
     FaGithub,
@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import dynamic from "next/dynamic";
+
 // Importing draggable components dynamically
 const DragDropContext = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.DragDropContext), { ssr: false });
 const Droppable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Droppable), { ssr: false });
@@ -44,7 +45,7 @@ const Template21 = () => {
           
             <div class="bg-cyan-500 p-5 w-1/3">
                 <div class="rounded-full border-solid	border-white-500 mb-5">
-                  <img src="img/profile_one.png"></img>
+                  <Image src="img/profile_one.png" alt="profile-image" width={100} height={100}/>
                   <div class="border-solid rounded border-b-2 border-white-800 mb-2 mt-2"></div>
                 </div>
                 <div className="mb-8">

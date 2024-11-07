@@ -482,6 +482,7 @@ const ProfilePage = () => {
             
             }
             width={100}
+            height={100}
             alt="Please Upload Profile Photo"
             className="w-20 h-20 rounded-full"
           />

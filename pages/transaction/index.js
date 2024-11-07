@@ -94,12 +94,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+              <Image src="https://i.ibb.co/G9DC8S0/404-2.png" alt="transaction-img" />
             </div>
           </div>
         </div>
         <div>
-          <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+          <Image src="https://i.ibb.co/ck1SGFJ/Group.png" alt="transaction-img" width={100} height={100} />
         </div>
       </div>
 

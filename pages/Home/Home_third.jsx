@@ -200,9 +200,6 @@ function Home_third() {
 <div className='flex justify-center' data-aos="fade-up">
   <div className='md:w-[78%] rounded-xl py-5 px-4' id='home_third'>
     <div className='flex flex-col gap-2 justify-evenly md:flex-row rounded-xl px-5 text-black'>
-      {/* <div>
-        <Image src={image} alt="logo" className='h-[400px] w-[350px] rounded-xl shadow-lg shadow-gray-600' />
-      </div> */}
       <div className='flex flex-col font-medium px-3 gap-5'>
         <h1 className='text-center font-ubuntu font-bold text-4xl py-2 text-black'>How Our<span className="text-purple-700"> AI Resume </span>Works For You</h1>
         <div className="grid gap-4 md:grid-cols-2">
@@ -214,7 +211,7 @@ function Home_third() {
           ].map((item, index) => (
             <div key={index} className='flex items-center shadow-lg rounded-2xl px-3 py-2 shadow-gray-600 hover:border-b-2 hover:border-slate-500 gap-2'>
               <div>
-                <Image src={item.icon} alt="logo" className='h-20 w-20' />
+                <Image src={item.icon} alt="logo" className='h-20 w-20' height={100} width={100} />
               </div>
               <div className='text-xl'>
                 <p>{item.text}</p>
@@ -250,7 +247,7 @@ function Home_third() {
               { src: image3, alt: "Doctor Resume Template", title: "Modern Resume Template" }
             ].map((template, index) => (
               <div key={index} className='relative group'>
-                <Image src={template.src} alt={template.alt} className='h-96 w-full rounded-xl' />
+                <Image src={template.src} alt={template.alt} className='h-96 w-full rounded-xl' width={100} height={100} />
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
                 <Link href="/dashboard/profile">
                   <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit text-white bg-purple-700 font-bold py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Build Your Resume Now</button>
@@ -300,7 +297,7 @@ function Home_third() {
               { src: cvimage3, alt: "Cover Letter Sample", title: "Cover Letter Examples" }
             ].map((template, index) => (
               <div key={index} className='relative group'>
-                <Image src={template.src} alt={template.alt} className='h-[400px] w-full border-2 rounded-lg shadow-xl shadow-gray-500' />
+                <Image src={template.src} alt={template.alt} className='h-[400px] w-full border-2 rounded-lg shadow-xl shadow-gray-500' width={100} height={100}/>
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
                 <Link href="/dashboard/profile">
                   <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit bg-purple-700 text-white font-bold font-ubuntu py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Create Your CV</button>

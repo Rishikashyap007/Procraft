@@ -142,6 +142,7 @@ function Home_first() {
                       src={image}
                       alt="home-slide"
                       className="md:h-auto md:w-80 transition-transform transform hover:scale-105 "
+                      height={100} width={100}
                     />
                   </div>
                 ))}
@@ -151,7 +152,7 @@ function Home_first() {
           <div className="px-3 py-3 w-full md:w-[500px]">
             <div className="flex flex-col gap-4">
             <div className="font-medium text-3xl md:text-5xl font-ubuntu text-center md:text-left group relative">
-  Introducing<span className="text-purple-700"> Procraftr's </span>New AI-
+  Introducing<span className="text-purple-700"> Procraftr  </span>New AI-
   Powered Resume Builder
   <span className="absolute bottom-0 left-0 h-0.5 bg-gray-400 transform w-0 transition-all duration-300 group-hover:w-full mt-2"></span>
 </div>
