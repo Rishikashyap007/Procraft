@@ -1,5 +1,5 @@
 import '/styles/globals.css'
-import './dist/aos.css'
+// import './dist/aos.css'
 import AOS from 'aos';
 // In your component or _app.js
 import 'slick-carousel/slick/slick.css';
