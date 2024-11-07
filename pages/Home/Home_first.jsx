@@ -142,7 +142,7 @@ function Home_first() {
                       src={image}
                       alt="home-slide"
                       className="md:h-auto md:w-80 transition-transform transform hover:scale-105 "
-                      height={100} width={100}
+                      // height={100} width={100}
                     />
                   </div>
                 ))}

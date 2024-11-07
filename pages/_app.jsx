@@ -12,5 +12,9 @@ export default function App({ Component, pageProps }) {
       duration: 1000, // Set animation duration
     });
   }, []);
-  return <Component {...pageProps} />
+return (
+    <div className="overflow-x-hidden">
+      <Component {...pageProps} />
+    </div>
+  );
 }
